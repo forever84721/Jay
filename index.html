@@ -12,7 +12,7 @@
             body, html 
             {
                 overflow-x: hidden;
-            } 
+            }
         </style>
     </head>
     <body>
@@ -38,7 +38,7 @@
             <div class="navbar navbar-dark bg-dark box-shadow">
                 <div class="container d-flex justify-content-between">
                     <a href="" class="navbar-brand d-flex align-items-center">
-                        <strong>Portfolio of Jay</strong>
+                        <strong>Jay</strong>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -48,7 +48,7 @@
         </header>
         <!--header結束-->
         <!--主選單開始-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-darken-4">
+        <nav id="top-bar" class="navbar navbar-expand-lg navbar-light bg-darken-1">
             <div class="container">
                 <a class="navbar-brand" href="#">Home</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,16 +65,8 @@
                         <li class="nav-item">
                             <a id="SkillsA" class="nav-link" href="#">My Skills</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                作品
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
+                        <li class="nav-item">
+                            <a id="PortfolioA" class="nav-link" href="#">Portfolio</a>
                         </li>
                     </ul>
                 </div>
@@ -82,10 +74,10 @@
         </nav>
         <!--主選單結束-->
         <!--Personal Profile jumbotron開始-->
-        <div id="PersonalProfile" class="jumbotron bg-darken-4">
+        <div id="PersonalProfile" class="jumbotron-dark bg-darken-4">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12 col-md-10">
+                    <div class="col-12 col-xs-12 col-md-10">
                         <h1>Personal Profile</h1>
                         <p>　　我叫做廖翊傑，國中畢業後就讀台北市立松山工農資訊科，開始接觸程式語言，對程式語言有極大興趣，學了VB和C#，曾在高二期間參加程式設計比賽獲得全校第一名，也讓我決定未來要往資工系發展。</p>
                         <p>　　2013年高職畢業後就讀國立台中勤益科技大學資工系，在學校程式語言的相關課程都表現相當良好，經常受老師之託，協助教導同學。
@@ -98,10 +90,10 @@
         <!--Personal Profile jumbotron結束-->
         <!--Work Experience jumbotron開始-->
         <header>
-            <div id="WorkExperience" class="jumbotron-dark">
+            <div id="WorkExperience" class="jumbotron">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-md-10">
+                        <div class="col-12 col-xs-12 col-md-10">
                             <h1>Work Experience</h1>
                             <p>2015年7月~2015年8月，於集盈科技公司擔任實習生，主要負責鵝蛋徵測的影像處理程式。</p>
                             <p>2017年8月~現在，於財團法人紡織產業綜合研究所擔任軟體工程師，主要負責ERP系統開發，包含銷售、庫存、各種報表，另外也有開發"樣布索樣報價"的Android APP。</p>
@@ -112,26 +104,39 @@
             </div>
         </header>
         <!--Work Experience jumbotron結束-->
-
-        <div id="Skills" class="jumbotron">
+        <!--Chart開始-->
+        <div id="Skills" class="jumbotron-dark">
             <div class="container ">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 col-xs-12 col-md-10">
                         <h1>My Skills</h1>
                         <h3>Skills</h3>
-                        <canvas id="myChart" width="400" height="200"></canvas>
+                        <canvas id="myChart" width="400" height="300"></canvas>
                         <h3>IDE</h3>
-                        <canvas id="IDEChart" width="400" height="200"></canvas>
+                        <canvas id="IDEChart" width="400" height="300"></canvas>
                     </div>
                 </div> 
             </div>
         </div>
-        
-        
+        <!--Chart結束-->
+        <!--Portfolio開始-->
+        <div id="Portfolio" class="jumbotron">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-12 col-xs-12 col-md-10">
+                        <h1>Portfolio</h1>
+                        
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <!--Portfolio結束-->
+
+        <br><br><br>
         <!--幻燈片開始-->
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-md-6">
+                <div class="col-12 col-xs-12 col-md-6">
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -223,6 +228,11 @@
                     scrollTop: $("#Skills").offset().top
                 }, 1800);
             });
+            $("#PortfolioA").click(function() {
+                $('html, body').animate({
+                    scrollTop: $("#Portfolio").offset().top 
+                }, 2200);
+            });
         </script>
         <script>
             var ctx = document.getElementById("myChart").getContext('2d');
@@ -232,7 +242,7 @@
                     labels: ["C","C#", "VB", "WinForm", "MS SQL Server", "ADO.NET", "Emgu CV","Java(Android)","SQLite","IIS","WebService","Entity Framework","Linq","OOP"],
                     datasets: [{
                         label: 'My Skills Score',
-                        data: [80, 70, 3, 5, 2, 3,9,5],
+                        data: [70, 85, 80, 85, 80, 80, 70, 80, 70, 70, 80, 70, 65, 65],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',

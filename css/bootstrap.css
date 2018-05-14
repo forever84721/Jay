@@ -4500,13 +4500,13 @@ tbody.collapse.show {
   background-color: #1d2124;
 }
 
-.jumbotron {
+.jumbotron-dark {
   padding: 2rem 1rem;
   margin-bottom: 0rem;
   background-color: #e9ecef;
   border-radius: 0.3rem;
 }
-.jumbotron-dark {
+.jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 0rem;
   background-color:transparent !important; 
