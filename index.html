@@ -2,530 +2,512 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" >-->
-    <title>Jay</title>
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/ElementUI.css" />
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/vue.js"></script>
-    <script src="js/ElementUI_zh-TW.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-    <style>
-        body,
-        html {
-            overflow-x: hidden;
-            font-family: Microsoft JhengHei;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" >-->
+  <title>Jay</title>
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/ElementUI.css" />
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/ElementUI_zh-TW.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+  <style>
+    body,
+    html {
+      overflow-x: hidden;
+      font-family: Microsoft JhengHei;
+    }
 
-        .fspx {
-            font-size: 15px;
-        }
+    .fspx {
+      font-size: 15px;
+    }
 
-        .fs16 {
-            font-size: 16px;
-        }
-    </style>
+    .fs16 {
+      font-size: 16px;
+    }
+  </style>
 </head>
 
 <body>
-    <div id="app">
-        <!--header開始-->
-        <header>
-            <div class="collapse bg-dark" id="navbarHeader">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8 col-md-7 py-4">
-                            <h4 class="text-white">About</h4>
-                            <p class="text-muted">我的簡介.學經歷.技能和個人作品集介紹</p>
-                        </div>
-                        <div class="col-sm-4 offset-md-1 py-4">
-                            <h4 class="text-white">Contact</h4>
-                            <ul class="list-unstyled">
+  <div id="app">
+    <!--header開始-->
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">我的簡介.學經歷.技能和個人作品集介紹</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
 
-                                <li><a href="https://github.com/forever84721" class="text-white">Github</a></li>
-                                <li><a href="https://www.facebook.com/profile.php?id=100003151410679"
-                                        class="text-white">On
-                                        Facebook</a></li>
-                                <li><a href="#" class="text-white">Email me</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <li><a href="https://github.com/forever84721" class="text-white">Github</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100003151410679" class="text-white">On
+                    Facebook</a></li>
+                <li><a href="#" class="text-white">Email me</a></li>
+              </ul>
             </div>
-            <div class="navbar navbar-dark bg-dark box-shadow">
-                <div class="container d-flex justify-content-between">
-                    <a href="" class="navbar-brand d-flex align-items-center">
-                        <strong>Jay</strong>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
-                        aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-            </div>
-        </header>
-        <!--header結束-->
-        <!--主選單開始-->
-        <nav id="top-bar" class="navbar navbar-expand-lg navbar-light bg-darken-1">
-            <div class="container">
-                <a class="navbar-brand" href="#">Home</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a id="PPA" class="nav-link" href="#">Personal Profile<span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="WEA" class="nav-link" href="#">Work Experience</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="SkillsA" class="nav-link" href="#">My Skills</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="PortfolioA" class="nav-link" href="#">Portfolio</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!--主選單結束-->
-        <!--Personal Profile jumbotron開始-->
-        <div id="PersonalProfile" class="jumbotron-dark bg-darken-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-xs-12 col-md-10">
-                        <h1>Personal Profile</h1>
-                        <p>　　我叫做廖翊傑，國中畢業後就讀台北市立松山工農資訊科，開始接觸程式語言，對程式語言很有興趣，學習了VB和C#，曾在高二期間參加程式設計比賽獲得全校第一名，也讓我決定未來要往資工系發展。
-                        </p>
-                        <p>　　2013年高職畢業後就讀國立台中勤益科技大學資工系，在學校程式語言的相關課程都表現相當良好，經常受老師之託，協助教導同學。
-                            大二暑假時，參加校外暑期實習，做了一個物體偵測的影像處理程式，學習了很多電腦視覺的基礎，也學習到Emgu CV(<a
-                                href="https://zh.wikipedia.org/wiki/OpenCV">OpenCV</a>
-                            in .NET)的使用方式。大三時，獨立完成了一個Android APP的專題，讓我對資料庫、架伺服器、WebService、WebAPI的串接等技術有一定的能力，也有在Google
-                            Play上架的經驗。</p>
-                        <p>　　在空閒的時候，會上<a href="https://zerojudge.tw/UserStatistic?id=50169">高中生程式解題系統</a>和<a
-                                href="https://leetcode.com/forever84721/">LeetCode</a>練習資料結構和演算法，目前高中生程式解題系統解260幾題(大部分使用C)，LeetCode解150幾題(大部分使用C#)。
-                        </p>
-                        <p>　　現在已經有桌面應用程式、Android程式和Web應用程式的開發經驗，目前正在學習.NET Core、Design
-                            Pattern、SOLID原則、單元測試...，讓我寫出架構更好、更容易維護、更可靠的程式碼。</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-        <!--Personal Profile jumbotron結束-->
-        <!--Work Experience jumbotron開始-->
-        <header>
-            <div id="WorkExperience" class="jumbotron">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-xs-12 col-md-10">
-                            <h1>Work Experience</h1>
-                            <p>2015年7月~2015年8月，於集盈科技公司擔任實習生，主要負責鵝蛋偵測的影像處理程式。</p>
-                            <p>2017年8月~2019年3月，於財團法人紡織產業綜合研究所擔任軟體工程師，主要負責WinForm ERP系統開發，包含訂單、庫存、各種報表，另外也有開發ASP.NET
-                                MVC5網站和Android APP。</p>
-                            <p>2019年3月~現在，於Nexify擔任全端工程師，主要負責網站的開發，後端使用C#，前端使用Angular，也有使用Vue製作Web
-                                Component來協助其他專案的網站開發。</p>
-                            <p>2018年2月~現在，承接了一個POS系統的外包專案，獨立開發整個系統，包含需求溝通、系統分析、設計、資料庫設計、程式設計等工作。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!--Work Experience jumbotron結束-->
-        <!--Chart開始-->
-        <div id="Skills" class="jumbotron-dark">
-            <div class="container ">
-                <div class="row">
-                    <div class="col-12 col-xs-12 col-md-10">
-                        <h1>My Skills</h1>
-                        <h3>Skills</h3>
-                        <canvas id="myChart" width="400" height="300"></canvas>
-                        <h3>IDE</h3>
-                        <canvas id="IDEChart" width="500" height="300"></canvas>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="" class="navbar-brand d-flex align-items-center">
+            <strong>Jay</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+            aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
-        <!--Chart結束-->
-        <!--Portfolio開始-->
-        <div id="Portfolio" class="jumbotron">
-            <div class="container ">
-                <div class="row">
-                    <div class="col-12 col-xs-12 col-md-10">
-                        <h1>Portfolio</h1>
-                    </div>
-                </div>
-                <br>
-                <el-button type="primary" @click.native="Opencollapse">{{Text}}</el-button>
-            </div>
+      </div>
+    </header>
+    <!--header結束-->
+    <!--主選單開始-->
+    <nav id="top-bar" class="navbar navbar-expand-lg navbar-light bg-darken-1">
+      <div class="container">
+        <a class="navbar-brand" href="#">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a id="PPA" class="nav-link" href="#">Personal Profile<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a id="WEA" class="nav-link" href="#">Work Experience</a>
+            </li>
+            <li class="nav-item">
+              <a id="SkillsA" class="nav-link" href="#">My Skills</a>
+            </li>
+            <li class="nav-item">
+              <a id="PortfolioA" class="nav-link" href="#">Portfolio</a>
+            </li>
+          </ul>
         </div>
-        <el-collapse class="container" v-model="activeNames" @change="handleChange">
-            <el-collapse-item title="路面感測App" name="1">
-                <div class="row">
-                    <div class="col-12 col-xs-12 col-md-6">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-                            </ol>
-                            <div class="carousel-inner" style=" width:100%; height: 480px !important;">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="./image/APP01-2.jpg" alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/APP02-2.jpg" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/APP03-2.jpg" alt="Third slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/APP04.jpg" alt="4 slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/APP05.jpg" alt="5 slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/APP06-2.jpg" alt="6 slide">
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-xs-12 col-md-6">
-                        <h1>路面感測App</h1>
-                        <p class="fspx">
-                            　　近年來，臺灣路面不平，相信在臺灣的人都可以明顯地感受到道路的品質非常的糟，導致用路人身心俱疲，尤其是騎乘機車時，經常一條路從頭震到尾，非常不舒服，更有不少人因此跌倒受傷，為了改善這些問題，所以專題決定做這個App。
-                        </p>
-                        <p class="fspx">
-                            　　在手機的部分利用了手機的加速度感測器和方向感測器來準確測量路面的震動，再利用GPS定位確定地點，然後儲存在手機SQLITE資料庫，並標示地點、程度在手機GOOGLE
-                            MAP上，再架設伺服器和資料庫，撰寫一Web Service架設在伺服器上接收手機上傳的經緯度等資料儲存在SQL
-                            SERVER，讓其他使用者可以下載查看，並在伺服器端撰寫一C#程式定時將收集到的經緯度等資料轉換成地址統計然後儲存在SQL SERVER提供用戶查詢或是直接推播通知危險路段的排行。
-                        </p>
-                        <p class="fspx">
-                            　　在使用者自行騎乘機車測量出路面的坑洞或是下載其他使用者上傳的資料後，還可以開啟警報功能，在騎乘機車時，若附近有坑洞的記錄點，手機就會發出警報聲來提醒機車騎士附近可能有危險，小心駕駛。
-                        </p>
-                        相關技術:<el-tag v-for="item in AndroidApp" :key="item" type="">
-                            {{item}}
-                        </el-tag>
-                    </div>
+      </div>
+    </nav>
+    <!--主選單結束-->
+    <!--Personal Profile jumbotron開始-->
+    <div id="PersonalProfile" class="jumbotron-dark bg-darken-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-xs-12 col-md-10">
+            <h1>Personal Profile</h1>
+            <p>　　我叫做廖翊傑，國中畢業後就讀台北市立松山工農資訊科，開始接觸程式語言，對程式語言很有興趣，學習了VB和C#，曾在高二期間參加程式設計比賽獲得全校第一名，也讓我決定未來要往資工系發展。
+            </p>
+            <p>　　2013年高職畢業後就讀國立台中勤益科技大學資工系，在學校程式語言的相關課程都表現相當良好，經常受老師之託，協助教導同學。
+              大二暑假時，參加校外暑期實習，做了一個物體偵測的影像處理程式，學習了很多電腦視覺的基礎，也學習到Emgu CV(<a
+                href="https://zh.wikipedia.org/wiki/OpenCV">OpenCV</a>
+              in .NET)的使用方式。大三時，獨立完成了一個Android APP的專題，讓我對資料庫、架伺服器、WebService、WebAPI的串接等技術有一定的能力，也有在Google
+              Play上架的經驗。</p>
+            <p>　　在空閒的時候，會上<a href="https://zerojudge.tw/UserStatistic?id=50169">高中生程式解題系統</a>和<a
+                href="https://leetcode.com/forever84721/">LeetCode</a>練習資料結構和演算法，還有和參加LeetCode的Weekly
+              Contest，目前高中生程式解題系統解260幾題(大部分使用C)，LeetCode解190幾題(大部分使用C#)。
+            </p>
+            <p>　　目前已經有桌面應用程式、Android程式和Web應用程式的開發經驗，目前正在學習.NET Core、Flutter，還有Design
+              Pattern、SOLID原則、單元測試...，讓我寫出架構更好、更容易維護、更可靠的程式碼。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Personal Profile jumbotron結束-->
+    <!--Work Experience jumbotron開始-->
+    <header>
+      <div id="WorkExperience" class="jumbotron">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-xs-12 col-md-10">
+              <h1>Work Experience</h1>
+              <p>2015年7月~2015年8月，於集盈科技公司擔任實習生，主要負責鵝蛋偵測的影像處理程式。</p>
+              <p>2017年8月~2019年3月，於財團法人紡織產業綜合研究所擔任軟體工程師，主要負責WinForm ERP系統開發，包含訂單、庫存、各種報表，另外也有開發ASP.NET
+                MVC5網站和Android APP。</p>
+              <p>2019年3月~現在，於Nexify擔任全端工程師，主要負責網站的開發，後端使用C#，前端使用Angular，和使用Vue製作Component來協助其他專案的網站開發，還有少許的React。</p>
+              <p>2018年2月~現在，承接了一個POS系統的外包專案，獨立開發整個系統，包含需求溝通、系統分析、設計、資料庫設計、程式設計等工作。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--Work Experience jumbotron結束-->
+    <!--Chart開始-->
+    <div id="Skills" class="jumbotron-dark">
+      <div class="container ">
+        <div class="row">
+          <div class="col-12 col-xs-12 col-md-10">
+            <h1>My Skills</h1>
+            <h3>Skills</h3>
+            <canvas id="myChart" width="400" height="300"></canvas>
+            <h3>IDE</h3>
+            <canvas id="IDEChart" width="500" height="300"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Chart結束-->
+    <!--Portfolio開始-->
+    <div id="Portfolio" class="jumbotron">
+      <div class="container ">
+        <div class="row">
+          <div class="col-12 col-xs-12 col-md-10">
+            <h1>Portfolio</h1>
+          </div>
+        </div>
+        <br>
+        <el-button type="primary" @click.native="Opencollapse">{{Text}}</el-button>
+      </div>
+    </div>
+    <el-collapse class="container" v-model="activeNames" @change="handleChange">
+      <el-collapse-item title="路面感測App" name="1">
+        <div class="row">
+          <div class="col-12 col-xs-12 col-md-6">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+              </ol>
+              <div class="carousel-inner" style=" width:100%; height: 480px !important;">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="./image/APP01-2.jpg" alt="First slide">
                 </div>
-            </el-collapse-item>
-            <el-collapse-item title="網路購物商城平台" name="2">
-                <div class="row">
-                    <div class="col-12 col-xs-12 col-md-6">
-                        <div id="carouselExampleIndicators6" class="carousel slide bg-darken-4"
-                            style=" background-color: gray" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators6" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators6" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators6" data-slide-to="2"></li>
-                                <li data-target="#carouselExampleIndicators6" data-slide-to="3"></li>
-                                <li data-target="#carouselExampleIndicators6" data-slide-to="4"></li>
-                                <li data-target="#carouselExampleIndicators6" data-slide-to="5"></li>
-                                <li data-target="#carouselExampleIndicators6" data-slide-to="6"></li>
-                                <li data-target="#carouselExampleIndicators6" data-slide-to="7"></li>
-                                <li data-target="#carouselExampleIndicators6" data-slide-to="8"></li>
-                            </ol>
-                            <div class="carousel-inner"
-                                style=" width:100%; height: 330px !important;margin: 0 auto;float: none;">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="./image/WebShop-1.jpg" alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/WebShop-2.jpg" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/WebShop-3.jpg" alt="Third slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/WebShop-4.jpg" alt="4">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/WebShop-5.jpg" alt="5">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/WebShop-6.jpg" alt="6">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/WebShop-7.jpg" alt="7">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/WebShop-8.jpg" alt="8">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/WebShop-9.jpg" alt="9">
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators6" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators6" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-xs-12 col-md-6">
-                        <h1>網路購物商城平台</h1>
-                        <p class="fspx">　　這是我自己練習ASP.NET MVC5
-                            C#的專案，雖然在公司已經有做MVC的專案，但我覺得練習量不夠多，所以想自己做一個購物商城平台，前端部分使用了Vue.js、JQuery、Bootstrap、Element
-                            UI等框架，為了讓使用者選擇711取貨超商，還有使用爬蟲技術去爬711的分店存到資料庫中。另外也預計搭配Vue Element Admin、Vue Router製作SPA(Single
-                            Page Application)後台，目前還在開發中。</p>
-                        相關技術:<el-tag v-for="item in WebShop" :key="item" type="">
-                            {{item}}
-                        </el-tag>
-                    </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/APP02-2.jpg" alt="Second slide">
                 </div>
-            </el-collapse-item>
-            <el-collapse-item title="POS點餐系統" name="3">
-                <div class="row">
-                    <div class="col-12 col-xs-12 col-md-6">
-                        <div id="carouselExampleIndicators5" class="carousel slide bg-darken-4"
-                            style=" background-color: gray" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators5" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators5" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators5" data-slide-to="2"></li>
-                                <li data-target="#carouselExampleIndicators5" data-slide-to="3"></li>
-                                <li data-target="#carouselExampleIndicators5" data-slide-to="4"></li>
-                                <li data-target="#carouselExampleIndicators5" data-slide-to="5"></li>
-                                <li data-target="#carouselExampleIndicators5" data-slide-to="6"></li>
-                                <li data-target="#carouselExampleIndicators5" data-slide-to="7"></li>
-                                <li data-target="#carouselExampleIndicators5" data-slide-to="8"></li>
-                                <li data-target="#carouselExampleIndicators5" data-slide-to="9"></li>
-                            </ol>
-                            <div class="carousel-inner"
-                                style=" width:100%; height: 350px !important;margin: 0 auto;float: none;">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="./image/POS-1.jpg" alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/POS-2.jpg" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/POS-3.jpg" alt="Third slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/POS-4.jpg" alt="4">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/POS-5.jpg" alt="5">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/POS-6.jpg" alt="6">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/POS-7.jpg" alt="7">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/POS-8.jpg" alt="7">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/POS-9.jpg" alt="7">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/POS-10.jpg" alt="7">
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators5" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators5" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-xs-12 col-md-6">
-                        <h1>POS點餐系統</h1>
-                        <p class="fspx">　　這是一個POS系統的外包專案，我獨立開發整個系統，包含需求溝通、系統分析、設計、資料庫設計、程式設計等工作，目前還在開發中。</p>
-                        相關技術:<el-tag v-for="item in POS" :key="item" type="">
-                            {{item}}
-                        </el-tag>
-                    </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/APP03-2.jpg" alt="Third slide">
                 </div>
-            </el-collapse-item>
-            <el-collapse-item title="鵝蛋偵測" name="4">
-                <div class="row">
-                    <div class="col-12 col-xs-12 col-md-6">
-                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
-                                <li data-target="#carouselExampleIndicators2" data-slide-to="3"></li>
-                            </ol>
-                            <div class="carousel-inner" style=" width:100%; height: 440px !important;">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="./image/egg-1.jpg" alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/egg-2.jpg" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/egg-3.jpg" alt="Third slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/egg-4.jpg" alt="4 slide">
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-xs-12 col-md-6">
-                        <h1>鵝蛋偵測</h1>
-                        <p class="fspx">　　這是在大三暑期實習時做的影像處理程式，當時公司是為了要偵測並記錄鵝的生蛋狀況，使用IP
-                            CAM擷取影像，傳輸到電腦做即時影像處理，在電腦端可以先使用滑鼠框選ROI，減少不必要的影像處理，影像處理相關的技術使用了灰階、二值化、濾波器、平滑、去雜訊、侵蝕擴張、Canny.Sobel測邊等，最後再把記錄的資料匯出到Excel或記事本。
-                        </p>
-                        相關技術:<el-tag v-for="item in Egg" :key="item" type="">
-                            {{item}}
-                        </el-tag>
-                    </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/APP04.jpg" alt="4 slide">
                 </div>
-            </el-collapse-item>
-            <el-collapse-item title="體感互動小遊戲" name="5">
-                <div class="row">
-                    <div class="col-12 col-xs-12 col-md-6">
-                        <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators3" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner" style=" width:100%; height: 460px !important;">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="./image/Game-1.jpg" alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/Game-2.jpg" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/Game-3.jpg" alt="Third slide">
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-xs-12 col-md-6">
-                        <h1>體感互動小遊戲</h1>
-                        <p class="fspx">　　這是在大四時上遊戲程式設計課的作品，模擬和貓咪一整天的互動，有幾個小關卡，搭配<a
-                                href="https://zh.wikipedia.org/wiki/Leap_Motion">Leap
-                                Motion</a>偵測玩家手的位置，模擬拿東西幫貓洗澡刷身體、沖水、梳毛等等，或是搭配電腦的Web
-                            Cam和人臉偵測取得臉的座標，模擬貓洗完澡甩水和用紅外線筆來逗貓，遊戲過程中會利用Web
-                            Cam幫玩家截圖，在過關後製作成Gif檔，常會拍出有趣的照片，讓玩家作紀念。</p>
-                        相關技術:<el-tag v-for="item in Game" :key="item" type="">
-                            {{item}}
-                        </el-tag>
-                    </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/APP05.jpg" alt="5 slide">
                 </div>
-            </el-collapse-item>
-            <el-collapse-item title="樣布索樣報價APP" name="6">
-                <div class="row">
-                    <div class="col-12 col-xs-12 col-md-6">
-                        <div id="carouselExampleIndicators4" class="carousel slide bg-darken-4"
-                            style=" background-color: gray" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators4" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators4" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators4" data-slide-to="2"></li>
-                                <li data-target="#carouselExampleIndicators4" data-slide-to="3"></li>
-                                <li data-target="#carouselExampleIndicators4" data-slide-to="4"></li>
-                                <li data-target="#carouselExampleIndicators4" data-slide-to="5"></li>
-                                <li data-target="#carouselExampleIndicators4" data-slide-to="6"></li>
-                            </ol>
-                            <div class="carousel-inner"
-                                style=" width:50%; height: 470px !important;margin: 0 auto;float: none;">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="./image/Farbic-1.png" alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/Farbic-2.png" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/Farbic-3.png" alt="Third slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/Farbic-4.png" alt="4">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/Farbic-5.png" alt="5">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/Farbic-6.png" alt="6">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/Farbic-7.png" alt="7">
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators4" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators4" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-xs-12 col-md-6">
-                        <h1>樣布索樣報價APP</h1>
-                        <p class="fspx">　　這是在財團法人紡織產業綜合研究時做的一個App，是給布商在展場時使用的，類似購物網站購物車的功能，還有用QR Code找布的功能，原本已經有Web
-                            App版，但是因為在展場常常連不上網路，所以我做了Android離線版，可以先把布的資料還有圖片下載到手機，在展場的時候就可以在沒網路的狀況下讓客戶挑選一些布記錄下來，等到有網路之後再把挑選的布製作成Excel用Email發送給客戶。
-                        </p>
-                        相關技術:<el-tag v-for="item in Farbic" :key="item" type="">
-                            {{item}}
-                        </el-tag>
-                    </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/APP06-2.jpg" alt="6 slide">
                 </div>
-            </el-collapse-item>
-            <!--<el-collapse-item title="音符偵測" name="7">
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-xs-12 col-md-6">
+            <h1>路面感測App</h1>
+            <p class="fspx">
+              　　近年來，臺灣路面不平，相信在臺灣的人都可以明顯地感受到道路的品質非常的糟，導致用路人身心俱疲，尤其是騎乘機車時，經常一條路從頭震到尾，非常不舒服，更有不少人因此跌倒受傷，為了改善這些問題，所以專題決定做這個App。
+            </p>
+            <p class="fspx">
+              　　在手機的部分利用了手機的加速度感測器和方向感測器來準確測量路面的震動，再利用GPS定位確定地點，然後儲存在手機SQLITE資料庫，並標示地點、程度在手機GOOGLE
+              MAP上，再架設伺服器和資料庫，撰寫一Web Service架設在伺服器上接收手機上傳的經緯度等資料儲存在SQL
+              SERVER，讓其他使用者可以下載查看，並在伺服器端撰寫一C#程式定時將收集到的經緯度等資料轉換成地址統計然後儲存在SQL SERVER提供用戶查詢或是直接推播通知危險路段的排行。
+            </p>
+            <p class="fspx">
+              　　在使用者自行騎乘機車測量出路面的坑洞或是下載其他使用者上傳的資料後，還可以開啟警報功能，在騎乘機車時，若附近有坑洞的記錄點，手機就會發出警報聲來提醒機車騎士附近可能有危險，小心駕駛。
+            </p>
+            相關技術:<el-tag v-for="item in AndroidApp" :key="item" type="">
+              {{item}}
+            </el-tag>
+          </div>
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="網路購物商城平台" name="2">
+        <div class="row">
+          <div class="col-12 col-xs-12 col-md-6">
+            <div id="carouselExampleIndicators6" class="carousel slide bg-darken-4" style=" background-color: gray"
+              data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators6" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="5"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="6"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="7"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="8"></li>
+              </ol>
+              <div class="carousel-inner" style=" width:100%; height: 330px !important;margin: 0 auto;float: none;">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="./image/WebShop-1.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-3.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-4.jpg" alt="4">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-5.jpg" alt="5">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-6.jpg" alt="6">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-7.jpg" alt="7">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-8.jpg" alt="8">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-9.jpg" alt="9">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators6" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators6" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-xs-12 col-md-6">
+            <h1>網路購物商城平台</h1>
+            <p class="fspx">　　這是我自己練習ASP.NET MVC5
+              C#的專案，雖然在公司已經有做MVC的專案，但我覺得練習量不夠多，所以想自己做一個購物商城平台，前端部分使用了Vue.js、JQuery、Bootstrap、Element
+              UI等框架，為了讓使用者選擇711取貨超商，還有使用爬蟲技術去爬711的分店存到資料庫中。另外也預計搭配Vue Element Admin、Vue Router製作SPA(Single
+              Page Application)後台，目前還在開發中。</p>
+            相關技術:<el-tag v-for="item in WebShop" :key="item" type="">
+              {{item}}
+            </el-tag>
+          </div>
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="POS點餐系統" name="3">
+        <div class="row">
+          <div class="col-12 col-xs-12 col-md-6">
+            <div id="carouselExampleIndicators5" class="carousel slide bg-darken-4" style=" background-color: gray"
+              data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators5" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators5" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators5" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators5" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators5" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators5" data-slide-to="5"></li>
+                <li data-target="#carouselExampleIndicators5" data-slide-to="6"></li>
+                <li data-target="#carouselExampleIndicators5" data-slide-to="7"></li>
+                <li data-target="#carouselExampleIndicators5" data-slide-to="8"></li>
+                <li data-target="#carouselExampleIndicators5" data-slide-to="9"></li>
+              </ol>
+              <div class="carousel-inner" style=" width:100%; height: 350px !important;margin: 0 auto;float: none;">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="./image/POS-1.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/POS-2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/POS-3.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/POS-4.jpg" alt="4">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/POS-5.jpg" alt="5">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/POS-6.jpg" alt="6">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/POS-7.jpg" alt="7">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/POS-8.jpg" alt="7">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/POS-9.jpg" alt="7">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/POS-10.jpg" alt="7">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators5" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators5" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-xs-12 col-md-6">
+            <h1>POS點餐系統</h1>
+            <p class="fspx">　　這是一個POS系統的外包專案，我獨立開發整個系統，包含需求溝通、系統分析、設計、資料庫設計、程式設計等工作，目前還在開發中。</p>
+            相關技術:<el-tag v-for="item in POS" :key="item" type="">
+              {{item}}
+            </el-tag>
+          </div>
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="鵝蛋偵測" name="4">
+        <div class="row">
+          <div class="col-12 col-xs-12 col-md-6">
+            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators2" data-slide-to="3"></li>
+              </ol>
+              <div class="carousel-inner" style=" width:100%; height: 440px !important;">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="./image/egg-1.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/egg-2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/egg-3.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/egg-4.jpg" alt="4 slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-xs-12 col-md-6">
+            <h1>鵝蛋偵測</h1>
+            <p class="fspx">　　這是在大三暑期實習時做的影像處理程式，當時公司是為了要偵測並記錄鵝的生蛋狀況，使用IP
+              CAM擷取影像，傳輸到電腦做即時影像處理，在電腦端可以先使用滑鼠框選ROI，減少不必要的影像處理，影像處理相關的技術使用了灰階、二值化、濾波器、平滑、去雜訊、侵蝕擴張、Canny.Sobel測邊等，最後再把記錄的資料匯出到Excel或記事本。
+            </p>
+            相關技術:<el-tag v-for="item in Egg" :key="item" type="">
+              {{item}}
+            </el-tag>
+          </div>
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="體感互動小遊戲" name="5">
+        <div class="row">
+          <div class="col-12 col-xs-12 col-md-6">
+            <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators3" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner" style=" width:100%; height: 460px !important;">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="./image/Game-1.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/Game-2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/Game-3.jpg" alt="Third slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-xs-12 col-md-6">
+            <h1>體感互動小遊戲</h1>
+            <p class="fspx">　　這是在大四時上遊戲程式設計課的作品，模擬和貓咪一整天的互動，有幾個小關卡，搭配<a
+                href="https://zh.wikipedia.org/wiki/Leap_Motion">Leap
+                Motion</a>偵測玩家手的位置，模擬拿東西幫貓洗澡刷身體、沖水、梳毛等等，或是搭配電腦的Web
+              Cam和人臉偵測取得臉的座標，模擬貓洗完澡甩水和用紅外線筆來逗貓，遊戲過程中會利用Web
+              Cam幫玩家截圖，在過關後製作成Gif檔，常會拍出有趣的照片，讓玩家作紀念。</p>
+            相關技術:<el-tag v-for="item in Game" :key="item" type="">
+              {{item}}
+            </el-tag>
+          </div>
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="樣布索樣報價APP" name="6">
+        <div class="row">
+          <div class="col-12 col-xs-12 col-md-6">
+            <div id="carouselExampleIndicators4" class="carousel slide bg-darken-4" style=" background-color: gray"
+              data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators4" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators4" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators4" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators4" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators4" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators4" data-slide-to="5"></li>
+                <li data-target="#carouselExampleIndicators4" data-slide-to="6"></li>
+              </ol>
+              <div class="carousel-inner" style=" width:50%; height: 470px !important;margin: 0 auto;float: none;">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="./image/Farbic-1.png" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/Farbic-2.png" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/Farbic-3.png" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/Farbic-4.png" alt="4">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/Farbic-5.png" alt="5">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/Farbic-6.png" alt="6">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/Farbic-7.png" alt="7">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators4" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators4" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-xs-12 col-md-6">
+            <h1>樣布索樣報價APP</h1>
+            <p class="fspx">　　這是在財團法人紡織產業綜合研究時做的一個App，是給布商在展場時使用的，類似購物網站購物車的功能，還有用QR Code找布的功能，原本已經有Web
+              App版，但是因為在展場常常連不上網路，所以我做了Android離線版，可以先把布的資料還有圖片下載到手機，在展場的時候就可以在沒網路的狀況下讓客戶挑選一些布記錄下來，等到有網路之後再把挑選的布製作成Excel用Email發送給客戶。
+            </p>
+            相關技術:<el-tag v-for="item in Farbic" :key="item" type="">
+              {{item}}
+            </el-tag>
+          </div>
+        </div>
+      </el-collapse-item>
+      <!--<el-collapse-item title="音符偵測" name="7">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
                         <img alt="" src="./image/stave-1.jpg" class="img-fluid" />
@@ -539,219 +521,220 @@
                     </div>
                 </div>
             </el-collapse-item>-->
-            <el-collapse-item title="即時聊天室" name="8">
-                <div class="row">
-                    <div class="col-12 col-xs-12 col-md-6">
-                        <div id="carouselExampleIndicators7" class="carousel slide bg-darken-4"
-                            style=" background-color: gray" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators7" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators7" data-slide-to="1"></li>
+      <el-collapse-item title="即時聊天室" name="8">
+        <div class="row">
+          <div class="col-12 col-xs-12 col-md-6">
+            <div id="carouselExampleIndicators7" class="carousel slide bg-darken-4" style=" background-color: gray"
+              data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators7" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators7" data-slide-to="1"></li>
 
-                                <li data-target="#carouselExampleIndicators7" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner"
-                                style=" width:100%; height: 350px !important;margin: 0 auto;float: none;">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="./image/ChatRoom-1.jpg" alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/ChatRoom-2.jpg" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="./image/ChatRoom-3.jpg" alt="Second slide">
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators7" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators7" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-xs-12 col-md-6">
-                        <h1>即時聊天室</h1>
-                        <p class="fspx">　　這是利用SignalR來建置的簡單即時聊天室，進房後先輸入自己的暱稱，還可以選擇自己的文字背景顏色。</p>
-                        相關技術:<el-tag v-for="item in ChatRoom" :key="item" type="">
-                            {{item}}
-                        </el-tag>
-                    </div>
+                <li data-target="#carouselExampleIndicators7" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner" style=" width:100%; height: 350px !important;margin: 0 auto;float: none;">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="./image/ChatRoom-1.jpg" alt="First slide">
                 </div>
-            </el-collapse-item>
-        </el-collapse>
-        <!---->
-    </div>
-    <!--app-->
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                AndroidApp: ["Android(Java)", "SQLite", "GCM(Google Cloud Messaging)推播通知", "Google Maps Android API", "GPS定位", "速度感測器(G-sensor)", "方向感測器", "IIS", "WebService", "MS SQL Server", "ADO.NET", "WinForm", "Eclipse"],
-                Egg: ["WinForm", "Emgu CV(OpenCV in .NET)", "移動物體偵測", "讀寫Excel"],
-                Stave: ["WinForm", "Emgu CV(OpenCV in .NET)", "樣本比對", "相關係數"],
-                Game: ["人臉偵測", "Leap Motion(手部動作偵測)", "NGif", "WinForm", "Emgu CV(OpenCV in .NET)"],
-                Farbic: ["Android(Java)", "Android Camera", "Android Studio", "SQLite", "IIS", "WebService"],
-                POS: ["Entity Framework", "Linq", "Lambda", "Dapper", "ADO.NET", "MS SQL Server", "WinForm", "Newton JSON", "ComPort發票機", "讀寫Excel"],
-                WebShop: ["ASP.NET MVC5", "Entity Framework", "Linq", "Lambda", "Vue.js", "JQuery", "Ajax", "Bootstrap", "Element UI", "網路爬蟲", "正規表達式"],
-                ChatRoom: ["SignalR", "JQuery"],
-                activeNames: ['1'],
-                Open: false,
-                Text: "全部展開"
-            },
-            methods: {
-                handleChange(val) {
-                    // console.log(val);
-                },
-                Opencollapse() {
-                    if (this.Open) {
-                        this.activeNames = [];
-                        this.Open = false;
-                        this.Text = "全部打開";
-                    }
-                    else {
-                        this.activeNames = ['1', '2', '3', '4', '5', '6', '7', '8'];
-                        this.Open = true;
-                        this.Text = "全部折疊";
-                    }
-                }
-            },
-        });
-    </script>
-    <script>
-        $('.carousel').carousel({
-            interval: 2500
-        });
-        $("#PPA").click(function () {
-            $('html, body').animate({
-                scrollTop: $("#PersonalProfile").offset().top
-            }, 500);
-        });
-        $("#WEA").click(function () {
-            $('html, body').animate({
-                scrollTop: $("#WorkExperience").offset().top
-            }, 1400);
-        });
-        $("#SkillsA").click(function () {
-            $('html, body').animate({
-                scrollTop: $("#Skills").offset().top
-            }, 1800);
-        });
-        $("#PortfolioA").click(function () {
-            $('html, body').animate({
-                scrollTop: $("#Portfolio").offset().top
-            }, 2200);
-        });
-    </script>
-    <script>
-        var zzzdata = [65, 85, 80, 85, 80, 75, 75, 80, 70, 80, 75, 70, 70, 70, 75, 80, 70, 80, 70, 75];
-        var ctx = document.getElementById("myChart").getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'horizontalBar',
-            data: {
-                labels: ["C", "C#", "VB", "WinForm", "ASP.NET MVC5", "Vue.js", "Angular", "MS SQL Server", "SCSS", "ADO.NET", "Emgu CV", "Java(Android)", "SQLite", "IIS", "WebService", "Entity Framework", "Linq", "Dapper", "OOP", "Git"],
-                datasets: [{
-                    label: 'My Skills Score',
-                    data: zzzdata,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(255, 206, 86, 0.5)',
-                        'rgba(75, 192, 192, 0.5)',
-                        'rgba(75, 80, 192, 0.5)',
-                        'rgba(175, 80, 192, 0.5)',
-                        'rgba(130, 70, 112, 0.5)',
-                        'rgba(153, 102, 255, 0.5)',
-                        'rgba(255, 159, 64, 0.5)',
-                        'rgba(25, 159, 64, 0.5)',
-                        'rgba(200, 255, 190, 0.5)',
-                        'rgba(88, 164, 176, 0.5)',
-                        'rgba(214, 73, 51, 0.5)',
-                        'rgba(243, 167, 18, 0.5)',
-                        'rgba(169, 188, 208, 0.5)',
-                        'rgba(55, 63, 81, 0.5)',
-                        'rgba(130, 70, 112, 0.5)',
-                        'rgba(49, 46, 164, 0.5)',
-                        'rgba(255, 105, 120, 0.5)',
-                        'rgba(156, 56, 76, 0.5)'
-                    ],
-                    borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(75, 80, 192, 1)',
-                        'rgba(175, 80, 192, 1)',
-                        'rgba(49, 46, 164, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)',
-                        'rgba(25, 159, 64, 1)',
-                        'rgba(200, 255, 190, 1)',
-                        'rgba(88, 164, 176, 1)',
-                        'rgba(214, 73, 51, 1)',
-                        'rgba(243, 167, 18, 1)',
-                        'rgba(169, 188, 208, 1)',
-                        'rgba(55, 63, 81, 1)',
-                        'rgba(130, 70, 112,1)',
-                        'rgba(49, 46, 164, 1)',
-                        'rgba(255, 105, 120, 1)',
-                        'rgba(156, 56, 76, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    xAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            max: 100
-                        }
-                    }]
-                }
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/ChatRoom-2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/ChatRoom-3.jpg" alt="Second slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators7" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators7" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-xs-12 col-md-6">
+            <h1>即時聊天室</h1>
+            <p class="fspx">　　這是利用SignalR來建置的簡單即時聊天室，進房後先輸入自己的暱稱，還可以選擇自己的文字背景顏色。</p>
+            相關技術:<el-tag v-for="item in ChatRoom" :key="item" type="">
+              {{item}}
+            </el-tag>
+          </div>
+        </div>
+      </el-collapse-item>
+    </el-collapse>
+    <!---->
+  </div>
+  <!--app-->
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        AndroidApp: ["Android(Java)", "SQLite", "GCM(Google Cloud Messaging)推播通知", "Google Maps Android API", "GPS定位", "速度感測器(G-sensor)", "方向感測器", "IIS", "WebService", "MS SQL Server", "ADO.NET", "WinForm", "Eclipse"],
+        Egg: ["WinForm", "Emgu CV(OpenCV in .NET)", "移動物體偵測", "讀寫Excel"],
+        Stave: ["WinForm", "Emgu CV(OpenCV in .NET)", "樣本比對", "相關係數"],
+        Game: ["人臉偵測", "Leap Motion(手部動作偵測)", "NGif", "WinForm", "Emgu CV(OpenCV in .NET)"],
+        Farbic: ["Android(Java)", "Android Camera", "Android Studio", "SQLite", "IIS", "WebService"],
+        POS: ["Entity Framework", "Linq", "Dapper", "ADO.NET", "MS SQL Server", "WinForm", "Newton JSON", "ComPort發票機", "讀寫Excel", "電子發票"],
+        WebShop: ["ASP.NET MVC5", "Entity Framework", "Linq", "Vue.js", "JQuery", "Ajax", "Bootstrap", "Element UI", "網路爬蟲", "正規表達式"],
+        ChatRoom: ["SignalR", "JQuery"],
+        activeNames: ['1'],
+        Open: false,
+        Text: "全部展開"
+      },
+      methods: {
+        handleChange(val) {
+          // console.log(val);
+        },
+        Opencollapse() {
+          if (this.Open) {
+            this.activeNames = [];
+            this.Open = false;
+            this.Text = "全部打開";
+          }
+          else {
+            this.activeNames = ['1', '2', '3', '4', '5', '6', '7', '8'];
+            this.Open = true;
+            this.Text = "全部折疊";
+          }
+        }
+      },
+    });
+  </script>
+  <script>
+    $('.carousel').carousel({
+      interval: 2500
+    });
+    $("#PPA").click(function () {
+      $('html, body').animate({
+        scrollTop: $("#PersonalProfile").offset().top
+      }, 500);
+    });
+    $("#WEA").click(function () {
+      $('html, body').animate({
+        scrollTop: $("#WorkExperience").offset().top
+      }, 1400);
+    });
+    $("#SkillsA").click(function () {
+      $('html, body').animate({
+        scrollTop: $("#Skills").offset().top
+      }, 1800);
+    });
+    $("#PortfolioA").click(function () {
+      $('html, body').animate({
+        scrollTop: $("#Portfolio").offset().top
+      }, 2200);
+    });
+  </script>
+  <script>
+    var zzzdata = [65, 85, 75, 80, 85, 80, 80, 75, 70, 80, 70, 80, 75, 70, 70, 70, 75, 80, 75, 80, 70, 75];
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'horizontalBar',
+      data: {
+        labels: ["C", "C#", "Dart", "VB", "WinForm", "ASP.NET MVC5", "Vue.js", "Angular", "Flutter", "MS SQL Server", "SCSS", "ADO.NET", "Emgu CV", "Java(Android)", "SQLite", "IIS", "WebService", "Entity Framework", "Linq", "Dapper", "OOP", "Git"],
+        datasets: [{
+          label: 'My Skills Score',
+          data: zzzdata,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.5)',
+            'rgba(0, 150, 0, 0.5)',
+            'rgba(84, 197, 248, 0.5)',
+            'rgba(255, 206, 86, 0.5)',
+            'rgba(75, 192, 192, 0.5)',
+            'rgba(75, 80, 192, 0.5)',
+            'rgba(175, 80, 192, 0.5)',
+            'rgba(130, 70, 112, 0.5)',
+            'rgba(84, 197, 248, 0.5)',
+            'rgba(153, 102, 255, 0.5)',
+            'rgba(255, 159, 64, 0.5)',
+            'rgba(25, 159, 64, 0.5)',
+            'rgba(200, 255, 190, 0.5)',
+            'rgba(88, 164, 176, 0.5)',
+            'rgba(214, 73, 51, 0.5)',
+            'rgba(243, 167, 18, 0.5)',
+            'rgba(169, 188, 208, 0.5)',
+            'rgba(55, 63, 81, 0.5)',
+            'rgba(130, 70, 112, 0.5)',
+            'rgba(49, 46, 164, 0.5)',
+            'rgba(255, 105, 120, 0.5)',
+            'rgba(156, 56, 76, 0.5)'
+          ],
+          borderColor: [
+            'rgba(255,99,132,1)',
+            'rgba(0, 150, 0, 1)',
+            'rgba(1, 187, 155, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(75, 80, 192, 1)',
+            'rgba(175, 80, 192, 1)',
+            'rgba(49, 46, 164, 1)',
+            'rgba(1, 187, 155, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(25, 159, 64, 1)',
+            'rgba(200, 255, 190, 1)',
+            'rgba(88, 164, 176, 1)',
+            'rgba(214, 73, 51, 1)',
+            'rgba(243, 167, 18, 1)',
+            'rgba(169, 188, 208, 1)',
+            'rgba(55, 63, 81, 1)',
+            'rgba(130, 70, 112,1)',
+            'rgba(49, 46, 164, 1)',
+            'rgba(255, 105, 120, 1)',
+            'rgba(156, 56, 76, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          xAxes: [{
+            ticks: {
+              beginAtZero: true,
+              max: 100
             }
-        });
-        var ctx = document.getElementById("IDEChart").getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ["Visual Studio", "SSMS", "Android Studio", "Eclipse", "VSCode"],
-                datasets: [{
-                    label: 'My Skills Score',
-                    data: [85, 80, 80, 70, 80],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(169, 188, 208, 0.5)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(153, 102, 255, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(169, 188, 208, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(153, 102, 255, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            max: 100
-                        }
-                    }]
-                }
+          }]
+        }
+      }
+    });
+    var ctx = document.getElementById("IDEChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ["Visual Studio", "SSMS", "Android Studio", "Eclipse", "VSCode"],
+        datasets: [{
+          label: 'My Skills Score',
+          data: [85, 80, 80, 70, 80],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(169, 188, 208, 0.5)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(153, 102, 255, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255,99,132,1)',
+            'rgba(169, 188, 208, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+              max: 100
             }
-        });
-    </script>
+          }]
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>
