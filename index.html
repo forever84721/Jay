@@ -110,7 +110,7 @@
               Play上架的經驗。</p>
             <p>　　在空閒的時候，會上<a href="https://zerojudge.tw/UserStatistic?id=50169">高中生程式解題系統</a>和<a
                 href="https://leetcode.com/forever84721/">LeetCode</a>練習資料結構和演算法，還有和參加LeetCode的Weekly
-              Contest，目前高中生程式解題系統解260幾題(大部分使用C)，LeetCode解190幾題(大部分使用C#)。
+              Contest，目前高中生程式解題系統解260幾題(大部分使用C)，LeetCode解230幾題(大部分使用C#)。
             </p>
             <p>　　目前已經有桌面應用程式、Android程式和Web應用程式的開發經驗，目前正在學習.NET Core、Flutter、Docker，還有Design
               Pattern、SOLID原則、單元測試...，讓我寫出架構更好、更容易維護、更可靠的程式碼。</p>
@@ -165,135 +165,7 @@
       </div>
     </div>
     <el-collapse class="container" v-model="activeNames" @change="handleChange">
-      <el-collapse-item title="路面感測App" name="1">
-        <div class="row">
-          <div class="col-12 col-xs-12 col-md-6">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-              </ol>
-              <div class="carousel-inner" style=" width:100%; height: 480px !important;">
-                <div class="carousel-item active">
-                  <img class="d-block w-100" src="./image/APP01-2.jpg" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./image/APP02-2.jpg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./image/APP03-2.jpg" alt="Third slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./image/APP04.jpg" alt="4 slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./image/APP05.jpg" alt="5 slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./image/APP06-2.jpg" alt="6 slide">
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </div>
-          <div class="col-12 col-xs-12 col-md-6">
-            <h1>路面感測App</h1>
-            <p class="fspx">
-              　　近年來，臺灣路面不平，相信在臺灣的人都可以明顯地感受到道路的品質非常的糟，導致用路人身心俱疲，尤其是騎乘機車時，經常一條路從頭震到尾，非常不舒服，更有不少人因此跌倒受傷，為了改善這些問題，所以專題決定做這個App。
-            </p>
-            <p class="fspx">
-              　　在手機的部分利用了手機的加速度感測器和方向感測器來準確測量路面的震動，再利用GPS定位確定地點，然後儲存在手機SQLITE資料庫，並標示地點、程度在手機GOOGLE
-              MAP上，再架設伺服器和資料庫，撰寫一Web Service架設在伺服器上接收手機上傳的經緯度等資料儲存在SQL
-              SERVER，讓其他使用者可以下載查看，並在伺服器端撰寫一C#程式定時將收集到的經緯度等資料轉換成地址統計然後儲存在SQL SERVER提供用戶查詢或是直接推播通知危險路段的排行。
-            </p>
-            <p class="fspx">
-              　　在使用者自行騎乘機車測量出路面的坑洞或是下載其他使用者上傳的資料後，還可以開啟警報功能，在騎乘機車時，若附近有坑洞的記錄點，手機就會發出警報聲來提醒機車騎士附近可能有危險，小心駕駛。
-            </p>
-            相關技術:<el-tag v-for="item in AndroidApp" :key="item" type="">
-              {{item}}
-            </el-tag>
-          </div>
-        </div>
-      </el-collapse-item>
-      <el-collapse-item title="網路購物商城平台" name="2">
-        <div class="row">
-          <div class="col-12 col-xs-12 col-md-6">
-            <div id="carouselExampleIndicators6" class="carousel slide bg-darken-4" style=" background-color: gray"
-              data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators6" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators6" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators6" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators6" data-slide-to="3"></li>
-                <li data-target="#carouselExampleIndicators6" data-slide-to="4"></li>
-                <li data-target="#carouselExampleIndicators6" data-slide-to="5"></li>
-                <li data-target="#carouselExampleIndicators6" data-slide-to="6"></li>
-                <li data-target="#carouselExampleIndicators6" data-slide-to="7"></li>
-                <li data-target="#carouselExampleIndicators6" data-slide-to="8"></li>
-              </ol>
-              <div class="carousel-inner" style=" width:100%; height: 330px !important;margin: 0 auto;float: none;">
-                <div class="carousel-item active">
-                  <img class="d-block w-100" src="./image/WebShop-1.jpg" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./image/WebShop-2.jpg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./image/WebShop-3.jpg" alt="Third slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./image/WebShop-4.jpg" alt="4">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./image/WebShop-5.jpg" alt="5">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./image/WebShop-6.jpg" alt="6">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./image/WebShop-7.jpg" alt="7">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./image/WebShop-8.jpg" alt="8">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="./image/WebShop-9.jpg" alt="9">
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators6" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators6" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </div>
-          <div class="col-12 col-xs-12 col-md-6">
-            <h1>網路購物商城平台</h1>
-            <p class="fspx">　　這是我自己練習ASP.NET MVC5
-              C#的專案，雖然在公司已經有做MVC的專案，但我覺得練習量不夠多，所以想自己做一個購物商城平台，前端部分使用了Vue.js、JQuery、Bootstrap、Element
-              UI等框架，為了讓使用者選擇711取貨超商，還有使用爬蟲技術去爬711的分店存到資料庫中。另外也預計搭配Vue Element Admin、Vue Router製作SPA(Single
-              Page Application)後台，目前還在開發中。</p>
-            相關技術:<el-tag v-for="item in WebShop" :key="item" type="">
-              {{item}}
-            </el-tag>
-          </div>
-        </div>
-      </el-collapse-item>
-      <el-collapse-item title="POS點餐系統" name="3">
+      <el-collapse-item title="POS點餐系統" name="1">
         <div class="row">
           <div class="col-12 col-xs-12 col-md-6">
             <div id="carouselExampleIndicators5" class="carousel slide bg-darken-4" style=" background-color: gray"
@@ -361,7 +233,181 @@
           </div>
         </div>
       </el-collapse-item>
-      <el-collapse-item title="鵝蛋偵測" name="4">
+      <el-collapse-item title="訂貨系統" name="2">
+        <div class="row">
+          <div class="col-12 col-xs-12 col-md-6">
+            <div id="carouselExampleIndicators8" class="carousel slide bg-darken-4" style=" background-color: gray"
+              data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators8" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators8" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators8" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators8" data-slide-to="3"></li>
+              </ol>
+              <div class="carousel-inner" style=" width:100%; height: 300px !important;margin: 0 auto;float: none;">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="./image/Order-1.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/Order-2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/Order-3.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/Order-4.jpg" alt="4">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators8" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators8" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-xs-12 col-md-6">
+            <h1>訂貨系統</h1>
+            <p class="fspx">
+              這是從POS系統衍伸出來的訂貨系統，為了讓加盟店家可以使用手機向總店訂貨，所以做成web介面，包含RWD，後端使用.NET Core，前端使用Vue.js搭配Vuetify。
+            </p>
+            相關技術:<el-tag v-for="item in Order" :key="item" type="">
+              {{item}}
+            </el-tag>
+          </div>
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="路面感測App" name="3">
+        <div class="row">
+          <div class="col-12 col-xs-12 col-md-6">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+              </ol>
+              <div class="carousel-inner" style=" width:100%; height: 480px !important;">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="./image/APP01-2.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/APP02-2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/APP03-2.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/APP04.jpg" alt="4 slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/APP05.jpg" alt="5 slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/APP06-2.jpg" alt="6 slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-xs-12 col-md-6">
+            <h1>路面感測App</h1>
+            <p class="fspx">
+              　　近年來，臺灣路面不平，相信在臺灣的人都可以明顯地感受到道路的品質非常的糟，導致用路人身心俱疲，尤其是騎乘機車時，經常一條路從頭震到尾，非常不舒服，更有不少人因此跌倒受傷，為了改善這些問題，所以專題決定做這個App。
+            </p>
+            <p class="fspx">
+              　　在手機的部分利用了手機的加速度感測器和方向感測器來準確測量路面的震動，再利用GPS定位確定地點，然後儲存在手機SQLITE資料庫，並標示地點、程度在手機GOOGLE
+              MAP上，再架設伺服器和資料庫，撰寫一Web Service架設在伺服器上接收手機上傳的經緯度等資料儲存在SQL
+              SERVER，讓其他使用者可以下載查看，並在伺服器端撰寫一C#程式定時將收集到的經緯度等資料轉換成地址統計然後儲存在SQL SERVER提供用戶查詢或是直接推播通知危險路段的排行。
+            </p>
+            <p class="fspx">
+              　　在使用者自行騎乘機車測量出路面的坑洞或是下載其他使用者上傳的資料後，還可以開啟警報功能，在騎乘機車時，若附近有坑洞的記錄點，手機就會發出警報聲來提醒機車騎士附近可能有危險，小心駕駛。
+            </p>
+            相關技術:<el-tag v-for="item in AndroidApp" :key="item" type="">
+              {{item}}
+            </el-tag>
+          </div>
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="網路購物商城平台" name="4">
+        <div class="row">
+          <div class="col-12 col-xs-12 col-md-6">
+            <div id="carouselExampleIndicators6" class="carousel slide bg-darken-4" style=" background-color: gray"
+              data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators6" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="5"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="6"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="7"></li>
+                <li data-target="#carouselExampleIndicators6" data-slide-to="8"></li>
+              </ol>
+              <div class="carousel-inner" style=" width:100%; height: 330px !important;margin: 0 auto;float: none;">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="./image/WebShop-1.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-3.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-4.jpg" alt="4">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-5.jpg" alt="5">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-6.jpg" alt="6">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-7.jpg" alt="7">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-8.jpg" alt="8">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="./image/WebShop-9.jpg" alt="9">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators6" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators6" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-xs-12 col-md-6">
+            <h1>網路購物商城平台</h1>
+            <p class="fspx">　　這是我自己練習ASP.NET MVC5
+              C#的專案，雖然在公司已經有做MVC的專案，但我覺得練習量不夠多，所以想自己做一個購物商城平台，前端部分使用了Vue.js、JQuery、Bootstrap、Element
+              UI等框架，為了讓使用者選擇711取貨超商，還有使用爬蟲技術去爬711的分店存到資料庫中。另外也預計搭配Vue Element Admin、Vue Router製作SPA(Single
+              Page Application)後台，目前還在開發中。</p>
+            相關技術:<el-tag v-for="item in WebShop" :key="item" type="">
+              {{item}}
+            </el-tag>
+          </div>
+        </div>
+      </el-collapse-item>
+      <el-collapse-item title="鵝蛋偵測" name="5">
         <div class="row">
           <div class="col-12 col-xs-12 col-md-6">
             <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
@@ -406,7 +452,7 @@
           </div>
         </div>
       </el-collapse-item>
-      <el-collapse-item title="體感互動小遊戲" name="5">
+      <el-collapse-item title="體感互動小遊戲" name="6">
         <div class="row">
           <div class="col-12 col-xs-12 col-md-6">
             <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
@@ -449,7 +495,7 @@
           </div>
         </div>
       </el-collapse-item>
-      <el-collapse-item title="樣布索樣報價APP" name="6">
+      <el-collapse-item title="樣布索樣報價APP" name="7">
         <div class="row">
           <div class="col-12 col-xs-12 col-md-6">
             <div id="carouselExampleIndicators4" class="carousel slide bg-darken-4" style=" background-color: gray"
@@ -578,6 +624,7 @@
         POS: ["Entity Framework", "Linq", "Dapper", "ADO.NET", "MS SQL Server", "WinForm", "Newton JSON", "ComPort發票機", "讀寫Excel", "電子發票"],
         WebShop: ["ASP.NET MVC5", "Entity Framework", "Linq", "Vue.js", "JQuery", "Ajax", "Bootstrap", "Element UI", "網路爬蟲", "正規表達式"],
         ChatRoom: ["SignalR", "JQuery"],
+        Order:[".NET Core","Entity Framework Core","Dapper","Vue.js","Vuetify"],
         activeNames: ['1'],
         Open: false,
         Text: "全部展開"
