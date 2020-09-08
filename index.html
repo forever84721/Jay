@@ -126,11 +126,34 @@
           <div class="row">
             <div class="col-12 col-xs-12 col-md-10">
               <h1>Work Experience</h1>
-              <p>2015年7月~2015年8月，於集盈科技公司擔任實習生，主要負責鵝蛋偵測的影像處理程式。</p>
-              <p>2017年8月~2019年3月，於財團法人紡織產業綜合研究所擔任軟體工程師，主要負責WinForm ERP系統開發，包含訂單、庫存、各種報表，另外也有開發ASP.NET
-                MVC5網站和Android APP。</p>
-              <p>2019年3月~現在，於Nexify擔任全端工程師，主要負責網站的開發，後端使用C#，前端使用Angular，和使用Vue製作Component來協助其他專案的網站開發，還有少許的React。</p>
-              <p>2018年2月~現在，承接了一個POS系統的外包專案，獨立開發整個系統，包含需求溝通、系統分析、設計、資料庫設計、程式設計等工作。</p>
+              <ul>
+                <li>
+                  <p>2015年7月~2015年8月，於集盈科技公司擔任實習生，主要負責鵝蛋偵測的影像處理程式。</p>
+                </li>
+                <hr>
+                <li>
+                  <p>
+                    2017年8月~2019年3月，於財團法人紡織產業綜合研究所擔任軟體工程師，主要負責WinForm ERP系統開發，包含訂單、庫存、各種報表，另外也有開發ASP.NET
+                    MVC5網站和Android APP。</p>
+                </li>
+                <hr>
+                <li>
+                  <p>
+                    2019年3月~現在，於Nexify擔任全端工程師，主要負責網站的開發，後端使用C#，前端主要使用Angular和Vue製作SPA網站或是製作Component來協助其他專案的網站開發，還有用到一些React和Knockout。
+                  </p>
+                  <p>除了前後端的開發，另外還有使用Docker協助建置環境(SQL Server)，建置Git
+                    Server(Gitea)，和Jenkins建立CICD流程，搭配Gitea的webhook，自動化整合部屬最新的程式碼，簡化繁雜的動作，最後利用Teams發送通知。</p>
+                </li>
+                <hr>
+                <li>
+                  <p>2018年2月~現在，承接了一個POS系統的專案，獨立開發整個系統，包含需求溝通、系統分析、設計、資料庫設計、程式設計等工作。</p>
+                </li>
+                <hr>
+                <li>
+                  <p>2020年5月~2020年8月，承接了一個遊戲&直播聊天室的web專案，前端主要使用Vue.js(TypeScript Class-Based Component)、Vue
+                    I18n、Vuex、RxJS、Video.js，後端.NET Core，主要使用SignalR做websocket，資料庫是MongoDB，搭配Redis做快取。</p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -226,7 +249,9 @@
           </div>
           <div class="col-12 col-xs-12 col-md-6">
             <h1>POS點餐系統</h1>
-            <p class="fspx">　　這是一個POS系統的外包專案，我獨立開發整個系統，包含需求溝通、系統分析、設計、資料庫設計、程式設計等工作，目前已經上線，還在持續開發新功能中。</p>
+            <p class="fspx">
+              　　這是一個POS系統的外包專案，我獨立開發整個系統，包含需求溝通、系統分析、設計、資料庫設計、程式設計等工作，功能包括點餐、餐廳桌況、退貨、印收據、印廚房單、印標籤、錢櫃控制、傳統發票、電子發票、客戶顯示器(點餐內容、圖片、跑馬燈)、各種報表...等等，目前已經上線數十家，還在持續開發新功能中。
+            </p>
             相關技術:<el-tag v-for="item in POS" :key="item" type="">
               {{item}}
             </el-tag>
@@ -271,7 +296,7 @@
           <div class="col-12 col-xs-12 col-md-6">
             <h1>訂貨系統</h1>
             <p class="fspx">
-              這是從POS系統衍伸出來的訂貨系統，為了讓加盟店家可以使用手機向總店訂貨，所以做成web介面，包含RWD，後端使用.NET Core，前端使用Vue.js搭配Vuetify。
+              這是從POS系統衍伸出來的訂貨系統，為了讓加盟店家可以使用手機向總店訂貨，所以做成web介面，包含RWD，前後端分離，後端使用.NET Core，前端使用Vue.js搭配Vuetify。
             </p>
             相關技術:<el-tag v-for="item in Order" :key="item" type="">
               {{item}}
@@ -456,9 +481,8 @@
           <div class="col-12 col-xs-12 col-md-6">
             <h1>網路購物商城平台</h1>
             <p class="fspx">　　這是我自己練習ASP.NET MVC5
-              C#的專案，雖然在公司已經有做MVC的專案，但我覺得練習量不夠多，所以想自己做一個購物商城平台，前端部分使用了Vue.js、JQuery、Bootstrap、Element
-              UI等框架，為了讓使用者選擇711取貨超商，還有使用爬蟲技術去爬711的分店存到資料庫中。另外也預計搭配Vue Element Admin、Vue Router製作SPA(Single
-              Page Application)後台，目前還在開發中。</p>
+              C#的專案，前端部分使用了Vue.js、JQuery、Bootstrap、Element
+              UI等框架，為了讓使用者選擇711取貨超商，還有使用爬蟲技術去爬711的分店存到資料庫中。</p>
             相關技術:<el-tag v-for="item in WebShop" :key="item" type="">
               {{item}}
             </el-tag>
@@ -602,7 +626,7 @@
           </div>
           <div class="col-12 col-xs-12 col-md-6">
             <h1>樣布索樣報價APP</h1>
-            <p class="fspx">　　這是在財團法人紡織產業綜合研究時做的一個App，是給布商在展場時使用的，類似購物網站購物車的功能，還有用QR Code找布的功能，原本已經有Web
+            <p class="fspx">　　這是在財團法人紡織產業綜合研究所時做的一個App，是給布商在展場時使用的，類似購物網站購物車的功能，還有用QR Code找布的功能，原本已經有Web
               App版，但是因為在展場常常連不上網路，所以我做了Android離線版，可以先把布的資料還有圖片下載到手機，在展場的時候就可以在沒網路的狀況下讓客戶挑選一些布記錄下來，等到有網路之後再把挑選的布製作成Excel用Email發送給客戶。
             </p>
             相關技術:<el-tag v-for="item in Farbic" :key="item" type="">
@@ -625,7 +649,7 @@
                     </div>
                 </div>
             </el-collapse-item>-->
-      <el-collapse-item title="即時聊天室" name="8">
+      <!-- <el-collapse-item title="即時聊天室" name="8">
         <div class="row">
           <div class="col-12 col-xs-12 col-md-6">
             <div id="carouselExampleIndicators7" class="carousel slide bg-darken-4" style=" background-color: gray"
@@ -665,7 +689,7 @@
             </el-tag>
           </div>
         </div>
-      </el-collapse-item>
+      </el-collapse-item> -->
     </el-collapse>
     <!---->
   </div>
@@ -679,11 +703,11 @@
         Stave: ["WinForm", "Emgu CV(OpenCV in .NET)", "樣本比對", "相關係數"],
         Game: ["人臉偵測", "Leap Motion(手部動作偵測)", "NGif", "WinForm", "Emgu CV(OpenCV in .NET)"],
         Farbic: ["Android(Java)", "Android Camera", "Android Studio", "SQLite", "IIS", "WebService"],
-        POS: ["Entity Framework", "Linq", "Dapper", "ADO.NET", "MS SQL Server", "WinForm", "Newton JSON", "ComPort發票機", "讀寫Excel", "電子發票"],
+        POS: ["Entity Framework", "Linq", "Dapper", "ADO.NET", "MS SQL Server", "WinForm", "ComPort發票機", "讀寫Excel", "電子發票串接"],
         WebShop: ["ASP.NET MVC5", "Entity Framework", "Linq", "Vue.js", "JQuery", "Ajax", "Bootstrap", "Element UI", "網路爬蟲", "正規表達式"],
         ChatRoom: ["SignalR", "JQuery"],
-        Order:[".NET Core","Entity Framework Core","Dapper","Vue.js","Vuetify"],
-        Community:["Dart","Flutter",".NET Core","Entity Framework Core","Dapper"],
+        Order: [".NET Core", "Entity Framework Core", "Dapper", "Vue.js", "Vuetify"],
+        Community: ["Dart", "Flutter", ".NET Core", "Entity Framework Core", "Dapper"],
         activeNames: ['1'],
         Open: false,
         Text: "全部展開"
